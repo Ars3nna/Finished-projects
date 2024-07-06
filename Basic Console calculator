@@ -1,0 +1,127 @@
+double num1 = 0;
+double num2 = 0;
+double result = 0;
+string myOperator = null;
+string myOperator2 = null;
+bool keepGoing = true;
+do
+{
+    num1 = 0;
+    num2 = 0;
+    result = 0;
+    myOperator = null;
+    myOperator2 = null;
+    keepGoing = true;
+
+    Console.Clear();
+    Console.WriteLine("------------------");
+    Console.WriteLine("Calculator Program");
+    Console.WriteLine("------------------");
+
+    Console.Write("Enter Number 1: ");
+    num1 = Convert.ToDouble(Console.ReadLine());
+
+    Console.WriteLine("Enter an option: ");
+    Console.WriteLine("\t+ : Add");
+    Console.WriteLine("\t- : Subtract");
+    Console.WriteLine("\t* : Multiply");
+    Console.WriteLine("\t/ : Divide");
+    Console.Write("Enter an option: ");
+
+    myOperator = Console.ReadLine();
+
+    Console.Write("Enter Number 2: ");
+    num2 = Convert.ToDouble(Console.ReadLine());
+
+    if (myOperator == "+")
+    {
+        result = num1 + num2;
+    }
+    if (myOperator == "-")
+    {
+        result = num1 - num2;
+    }
+    if (myOperator == "*")
+    {
+        result = num1 * num2;
+    }
+    if (myOperator == "/")
+    {
+        result = num1 / num2;
+    }
+
+    Console.Clear();
+    Console.WriteLine("Enter an option: ");
+    Console.WriteLine("\t+ : Add");
+    Console.WriteLine("\t- : Subtract");
+    Console.WriteLine("\t* : Multiply");
+    Console.WriteLine("\t/ : Divide");
+    Console.WriteLine("Enter an option: ");
+    Console.WriteLine();
+    Console.WriteLine("------");
+    Console.Write(result);
+
+    do
+    {
+        myOperator = Console.ReadLine();
+
+        if (myOperator == "c")
+        {
+            keepGoing = false;
+        }
+
+        while (keepGoing == true)
+        {
+            if (myOperator == "+")
+            {
+                Console.Clear();
+                Console.Write(result + "+");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                result = result + num1;
+                myOperator = null;
+            }
+            if (myOperator == "-")
+            {
+                Console.Clear();
+                Console.Write(result + "-");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                result = result - num1;
+                myOperator = null;
+
+            }
+            if (myOperator == "*")
+            {
+                Console.Clear();
+                Console.Write(result + "*");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                result = result * num1;
+                myOperator = null;
+
+            }
+            if (myOperator == "/")
+            {
+                Console.Clear();
+                Console.Write(result + "/");
+                num1 = Convert.ToDouble(Console.ReadLine());
+                result = result / num1;
+                myOperator = null;
+
+            }
+
+            Console.Clear();
+            Console.Write(result);
+
+
+            myOperator = Console.ReadLine();
+
+            if (myOperator == "c")
+            {
+                keepGoing = false;
+            }
+        }
+
+
+    } while (keepGoing == true);
+
+
+} while (keepGoing == false);
